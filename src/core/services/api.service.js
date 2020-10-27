@@ -17,7 +17,7 @@ export default class ApiService {
     get(uri, params )
     {
         return this.axiosHttp.get(uri,{params}).catch(error => {
-            throw new Error(`[RDC] ApiService ${error}`);
+            throw new Error(`ApiService ${error}`);
         });
     }
 
@@ -39,7 +39,7 @@ export default class ApiService {
     delete(uri)
     {
         return this.axiosHttp.delete(uri).catch(error => {
-            throw new Error(`[RDC] ApiService ${error}`);
+            throw new Error(`ApiService ${error}`);
         });
     }
 };
