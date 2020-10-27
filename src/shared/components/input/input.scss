@@ -17,7 +17,7 @@
     border: 0;
     border-radius: 3px;
     outline: 0;
-    text-indent: 80px; // Arbitrary.
+    text-indent: 80px; 
     transition: all .3s ease-in-out;
     
     &::-webkit-input-placeholder {
@@ -55,12 +55,11 @@
         transition: all .3s ease-in-out;
       }
       &:before {
-        // Skinny bit here
         top: 6px;
         left: 5px;
         right: 5px;
         bottom: 6px;
-        background: $medium-blue; // change this to #134A46
+        background: $medium-blue; 
       }
       &:after {
         top: 0;
