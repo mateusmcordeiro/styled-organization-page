@@ -1,12 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import { PagesContext, PagesContextProvider } from '../shared/contexts/PagesContext';
 import Organization from './organization';
 import Search from './search';
 
-function Pages() {
-  const pagesContextValues = useContext(PagesContext);
-  
+function Pages() {  
   const settings = {
     dots: false,
     infinite: true,
