@@ -1,28 +1,20 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Input from '../../shared/components/input';
-import './App.scss';
-import Slider from 'react-slick';
+import { PagesContext } from '../../shared/contexts/PagesContext';
+import './Search.scss';
 
 
 
-function App() {
+function Search() {
+
   const [loading, setLoading] = useState<boolean>(false);
-  const [organizationName, setOrganizationName] = useState<string>('');
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    draggable: false
-  };
-  const [sliderRef, setSliderRef] = useState<any>();
 
+  const [organizationName, setOrganizationName] = useState<string>('');
+  
   return (
-    <div className="app">
-      <Slider {...settings} ref={slider => (setSliderRef(slider))}>
-        <div className="carousel__cell">
+    <PagesContext.Consumer>
+      { ({slickRef}) => {
+        return (
           <div className="app__page">
             <Input
               onChangeInput={
@@ -34,26 +26,20 @@ function App() {
                 (e) => {
                   setLoading(true);
                   setTimeout(() => {
-                    sliderRef.slickGoTo(1);
-                  },3000)
+                    slickRef.slickGoTo(1);
+                  },3000);
                 }
               }
               
-              loading={loading}
-              selfValue={organizationName}
+              loading={ loading }
+              selfValue={ organizationName }
             ></Input>
-          </div>
-          
-        </div>
-        <div className="carousel__cell">
-          <div className="app__page">
-            teste
-          </div>
-        </div>
-      </Slider>
-      
-    </div>
+          </div>      
+        )
+      }}
+    </PagesContext.Consumer>
+    
   );
 }
 
-export default App;
+export default Search;
