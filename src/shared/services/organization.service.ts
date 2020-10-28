@@ -10,4 +10,5 @@ function fetchOrganizationRepository(organizationName: string) {
   return ApiService.get(`orgs/${organizationName}/repos`);
 }
 
+
 export default { fetchOrganization, fetchOrganizationRepository };

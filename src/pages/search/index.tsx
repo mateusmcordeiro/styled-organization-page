@@ -2,8 +2,39 @@ import React, { useState } from 'react';
 import Input from '../../shared/components/input';
 import { PagesContext } from '../../shared/contexts/PagesContext';
 import './Search.scss';
+import OrganizationService from '../../shared/services/organization.service';
 
-
+function onClickButtonAction({organizationName, setLoading}: any, context: any) {
+  OrganizationService
+    .fetchOrganization(organizationName)
+    .then(
+      (res) => {
+        return res.data;
+        }
+      ).then(
+        (organization) => {
+          return { organization, repositoriesResponse: OrganizationService.fetchOrganizationRepository(organizationName) }
+        }
+      ).then(
+        ({organization, repositoriesResponse}) => {
+          repositoriesResponse.then(
+            (res) => {
+              context.setOrganization({
+                ...organization,
+                repositories: res.data
+              })
+              context.slickRef.slickGoTo(1)
+              setLoading(false)
+            }
+          )
+        }
+    )
+    .catch(
+      (err) => {
+        setLoading(false);
+      }
+    )
+}
 
 function Search() {
 
@@ -13,7 +44,7 @@ function Search() {
   
   return (
     <PagesContext.Consumer>
-      { ({slickRef}) => {
+      { (context) => {
         return (
           <div className="app__page">
             <Input
@@ -25,9 +56,7 @@ function Search() {
               onClickButton={
                 (e) => {
                   setLoading(true);
-                  setTimeout(() => {
-                    slickRef.slickGoTo(1);
-                  },3000);
+                  onClickButtonAction({organizationName, setLoading}, context);
                 }
               }
               
