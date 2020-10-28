@@ -6,7 +6,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Input></Input>
+        <Input
+          onChange={(e) => {console.log(e)}}
+          loading={true}
+        ></Input>
       </header>
     </div>
   );

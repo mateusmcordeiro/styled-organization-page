@@ -6,13 +6,13 @@ interface SpinnerProps {
   active: boolean
 }
 
-function Spinner(props: SpinnerProps) {
+function Spinner({active}: SpinnerProps) {
   return (
     <div className={
       classNames(
           {
             spinner: true,
-            'spinner--active': props.active
+            'spinner--active': active
           }
         )
     }>
