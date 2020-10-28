@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Input from '../../shared/components/input';
 import './App.scss';
 import Slider from 'react-slick';
@@ -13,12 +13,15 @@ function App() {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
-    };
+    slidesToScroll: 1,
+    arrows: false,
+    draggable: false
+  };
+  const [sliderRef, setSliderRef] = useState<any>();
 
   return (
     <div className="app">
-      <Slider {...settings}>
+      <Slider {...settings} ref={slider => (setSliderRef(slider))}>
         <div className="carousel__cell">
           <div className="app__page">
             <Input
@@ -30,6 +33,9 @@ function App() {
               onClickButton={
                 (e) => {
                   setLoading(true);
+                  setTimeout(() => {
+                    sliderRef.slickGoTo(1);
+                  },3000)
                 }
               }
               
@@ -40,7 +46,9 @@ function App() {
           
         </div>
         <div className="carousel__cell">
-          teste
+          <div className="app__page">
+            teste
+          </div>
         </div>
       </Slider>
       

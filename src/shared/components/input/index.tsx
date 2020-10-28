@@ -11,8 +11,6 @@ interface InputProps {
   selfValue?: string
 }
 
-const localInputRef = React.createRef<HTMLInputElement>();
-
 function Input({ loading, onChangeInput = () => {}, onClickButton = () => {}, selfValue = '' }: InputProps) {
   return (
     <div className='inputGroup'>
@@ -35,14 +33,13 @@ function Input({ loading, onChangeInput = () => {}, onClickButton = () => {}, se
             'inputGroup__input--disabled': loading
           })
         }
-        ref={ localInputRef }
         onChange={ onChangeInput }
         id='myInput'
         type='text'
         placeholder='Ex: Facebook'
       />
       <label className='inputGroup__label' htmlFor='myInput'>
-        { loading ? localInputRef.current?.value : 'Organization Name' }
+        { loading ? selfValue : 'Organization Name' }
         <Spinner active={loading}></Spinner>
       </label>
     </div>
