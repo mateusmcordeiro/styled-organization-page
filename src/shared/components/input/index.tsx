@@ -20,11 +20,11 @@ function Input({ loading, onChangeInput = () => {}, onClickButton = () => {}, se
         className={
           classNames({
             inputGroup__button: true,
-            'inputGroup__button--active': selfValue.length > 0
+            'inputGroup__button--active': selfValue.length > 0,
+            'inputGroup__button--disabled': loading
           })
         }
-        onClick={onClickButton}
-      
+        onClick={ onClickButton }
       >
           <FiChevronRight size={30}></FiChevronRight>
       </button>

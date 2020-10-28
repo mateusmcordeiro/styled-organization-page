@@ -133,6 +133,9 @@
       animation-duration: .6s;
       color: $background;
     }
+    &--disabled {
+      display: none;
+    }
   }
 
 }
