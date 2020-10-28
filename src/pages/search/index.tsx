@@ -24,7 +24,10 @@ function onClickButtonAction({organizationName, setLoading}: any, context: any) 
                 repositories: res.data
               })
               context.slickRef.slickGoTo(1)
-              setLoading(false)
+              setTimeout(() => {
+                setLoading(false)
+              },2000)
+              
             }
           )
         }
