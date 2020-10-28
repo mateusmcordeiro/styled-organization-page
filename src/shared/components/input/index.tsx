@@ -26,7 +26,7 @@ function Input({ loading, onChangeInput = () => {}, onClickButton = () => {}, se
         }
         onClick={ onClickButton }
       >
-          <FiChevronRight size={30}></FiChevronRight>
+        <FiChevronRight size={30}></FiChevronRight>
       </button>
       <input 
         className={
