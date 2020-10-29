@@ -44,7 +44,7 @@ function Organization() {
                         <FiMapPin size={10} ></FiMapPin> <span>{ context.organization.location }</span>
                       </div>
                       <div className="information__block">
-                        <FiLink2 size={10} ></FiLink2> <a href={ context.organization.blog } >{ context.organization.blog }</a>
+                        <FiLink2 size={10} ></FiLink2> <a href={ context.organization.blog } target='_blank' rel='noopener noreferrer'>{ context.organization.blog }</a>
                       </div>
                       <div className="information__block success">
                         <FiCheck size={10} ></FiCheck> <span>Verified</span>

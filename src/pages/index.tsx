@@ -12,7 +12,7 @@ function Pages() {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    draggable: false
+    draggable: true
   };
 
 
