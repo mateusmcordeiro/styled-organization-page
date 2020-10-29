@@ -6,7 +6,6 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  position: absolute;
   &__picture {
     width: 200px;
     height: 200px;
@@ -96,7 +95,7 @@
       color: white;
       font-size: 13px;
       max-width: 400px;
-      width: 200px;
+      width: fit-content;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -127,4 +126,39 @@
       
     }
   }
+}
+
+.app__page.divided {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  .subpage {
+    transition: width .8s ease-in-out;
+    &:not(.primary) {
+      width: 0%;;
+    }
+    &.subpage--slide {
+      
+      
+      &.primary {
+        width: 40%;
+        z-index: 999999;
+        box-shadow: 7px 0px 18px 1px rgba(0, 0, 0, 0.3);
+      }
+      
+      &:not(.primary) {
+        width: 60%;
+        background-color: white;
+        padding: 30px;
+        height: 100vh;
+        overflow: scroll;
+      }
+
+      &.full {
+        width: 100%;
+      }
+      
+    }
+  }
+  
 }
