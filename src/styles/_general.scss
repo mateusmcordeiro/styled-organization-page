@@ -17,3 +17,15 @@ input, button, textarea {
 button {
   cursor: pointer;
 }
+a:visited, a {
+  text-decoration: none;
+  outline: none;
+  color: white;
+}
+a:hover {
+  color: $background;
+}
+
+.carousel__cell {
+  position: relative;
+}

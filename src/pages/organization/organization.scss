@@ -1,0 +1,130 @@
+@import '../../styles/variables';
+.organization {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  &__picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 6px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__infos {
+    max-width: 500px;
+    .infos__identity {
+      h1 {
+        font-size: 4rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+    .infos__extra {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      
+      .information__block {
+        display: flex;
+        align-items: center;
+        border: 1px solid white;
+        border-radius: 24px;
+        padding: 6px 12px;
+        width: fit-content;
+        margin-right: 10px;
+        margin-bottom: 8px;
+        transition: background .4s ease-in-out, color .4s ease-in-out;
+        &.success {
+          color: #8db596;
+          border: 1px solid #8db596;
+          a,span {
+            color: #8db596;
+            
+          }
+          &:hover {
+            background-color: #8db596;
+            a,span,svg {
+              color: white;
+            }
+          }
+        }
+        a {
+          color: white;
+        }
+        &:hover {
+          background-color: white;
+          color: $background;
+          
+          a {
+            color: $background;
+          }
+        }
+        svg {
+          width: 18px;
+          height: 16px;
+          padding-right: 6px;
+        }
+        span, a {
+          font-size: 10px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  &__actions {
+    max-width: 400px;
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      background: transparent;
+      border: 1px solid white;
+      padding: 15px 16px;
+      border-radius: 23px;
+      text-transform: uppercase;
+      color: white;
+      font-size: 13px;
+      max-width: 400px;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 35px;
+      &:hover {
+        color: $background;
+        background: white;
+        span {
+          background-color: rgba(0,0,0,.2);
+        }
+      }
+      svg {
+        margin-right: 4px;
+        width: 13px;
+        height: 13px;
+      }
+      span {
+        background-color: rgba(255,255,255,.2);
+        border-radius: 100%;
+        font-size: 10px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 4px;
+      }
+      
+    }
+  }
+}
