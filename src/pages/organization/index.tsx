@@ -36,19 +36,40 @@ function Organization() {
                   <div className="organization__infos">
                     <div className="infos__identity">
                       <h1>{ context.organization.name }</h1>
-                      <p>{ context.organization.description }.</p>
+                      {
+                        (context.organization.description.hasOwnProperty('description') && context.organization.description !== null) ? 
+                        <p>{ context.organization.description }.</p>
+                        : 
+                        <></>
+                      }
                     </div>
                     
                     <div className="infos__extra">
-                      <div className="information__block">
-                        <FiMapPin size={10} ></FiMapPin> <span>{ context.organization.location }</span>
-                      </div>
-                      <div className="information__block">
-                        <FiLink2 size={10} ></FiLink2> <a href={ context.organization.blog } target='_blank' rel='noopener noreferrer'>{ context.organization.blog }</a>
-                      </div>
-                      <div className="information__block success">
-                        <FiCheck size={10} ></FiCheck> <span>Verified</span>
-                      </div>
+                      {
+                        context.organization.hasOwnProperty('location') && context.organization.location !== null?
+                        <div className="information__block">
+                          <FiMapPin size={10} ></FiMapPin> <span>{ context.organization.location }</span>
+                        </div>
+                        :
+                        <></>
+                      }
+                      {
+                        context.organization.hasOwnProperty('blog') && context.organization.blog !== null ?
+                        <div className="information__block">
+                          <FiLink2 size={10} ></FiLink2> <a href={ context.organization.blog } target='_blank' rel='noopener noreferrer'>{ context.organization.blog }</a>
+                        </div>
+                        :
+                        <></>
+                      }
+                      
+                      {
+                        context.organization.hasOwnProperty('is_verified') && context.organization.is_verified ?
+                          <div className="information__block success">
+                            <FiCheck size={10} ></FiCheck> <span>Verified</span>
+                          </div> 
+                          : 
+                          <></> 
+                      }
                     </div>
                   </div>
                   <div className="organization__actions">
