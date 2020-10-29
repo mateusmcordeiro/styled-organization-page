@@ -145,9 +145,8 @@
     
     .repository__content {
       opacity: 0;
-      overflow: hidden;
-
     }
+    
     &:not(.primary) {
       width: 0%;;
     }
@@ -159,6 +158,7 @@
         z-index: 999999;
         box-shadow: 26px 4px 38px -7px rgba(0, 0, 0, 0.3);
         @media (max-width: 1000px) {
+          width: 100%;
           .organization {
             height: auto;
           }
@@ -174,6 +174,7 @@
         top: 0;
         transition: margin-top .5s ease-in-out;
         @media (max-width: 1000px) {
+          width: 95%;
           z-index: 9999999;
         }
         .repository__content {
