@@ -78,7 +78,7 @@ function Organization() {
                               <div className={
                                 classNames({
                                   items__item: true,
-                                  displaying: (termSearching.length > 0 && repo.full_name.includes(termSearching)) ||  termSearching.length === 0
+                                  displaying: (termSearching.length > 0 && (repo.full_name.toLocaleLowerCase()).includes(termSearching.toLocaleLowerCase())) ||  termSearching.length === 0
                                 })
                               } key={key}>
                                 <div className='item__title'>

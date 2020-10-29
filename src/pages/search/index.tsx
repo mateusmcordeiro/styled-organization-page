@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createRef, useState } from 'react';
 import Input from '../../shared/components/input';
 import { PagesContext } from '../../shared/contexts/PagesContext';
 import './Search.scss';
@@ -45,6 +45,8 @@ function Search() {
 
   const [organizationName, setOrganizationName] = useState<string>('');
   
+  const inputRef = createRef<any>()
+
   return (
     <PagesContext.Consumer>
       { (context) => {
@@ -62,9 +64,18 @@ function Search() {
                   onClickButtonAction({organizationName, setLoading}, context);
                 }
               }
-              
+              onKeyDown={
+                (e) => {
+                  if (e.key === 'Enter') {
+                    inputRef.current.blur();
+                    setLoading(true);
+                    onClickButtonAction({organizationName, setLoading}, context);
+                  }
+                }
+              }
               loading={ loading }
               selfValue={ organizationName }
+              reference={inputRef}
             ></Input>
           </div>      
         )

@@ -7,11 +7,13 @@ import { FiChevronRight } from "react-icons/fi";
 interface InputProps {
   loading: boolean,
   onChangeInput?: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void,
   onClickButton?: (e: React.MouseEvent<HTMLButtonElement>) => void,
-  selfValue?: string
+  selfValue?: string,
+  reference?: any
 }
 
-function Input({ loading, onChangeInput = () => {}, onClickButton = () => {}, selfValue = '' }: InputProps) {
+function Input({ loading, onChangeInput = () => {}, onClickButton = () => {}, onKeyDown = () => {}, selfValue = '', reference = {} }: InputProps) {
   return (
     <div className='inputGroup'>
       <button 
@@ -33,10 +35,12 @@ function Input({ loading, onChangeInput = () => {}, onClickButton = () => {}, se
             'inputGroup__input--disabled': loading
           })
         }
+        onKeyDown={ onKeyDown }
         onChange={ onChangeInput }
         id='myInput'
         type='text'
         placeholder='Ex: Facebook'
+        ref={reference}
       />
       <label className='inputGroup__label' htmlFor='myInput'>
         { loading ? selfValue : 'Organization Name' }
