@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/styled-organization-page/static/css/main.900120c6.chunk.css",
+    "main.js": "/styled-organization-page/static/js/main.4ebe8040.chunk.js",
+    "main.js.map": "/styled-organization-page/static/js/main.4ebe8040.chunk.js.map",
+    "runtime-main.js": "/styled-organization-page/static/js/runtime-main.4b541757.js",
+    "runtime-main.js.map": "/styled-organization-page/static/js/runtime-main.4b541757.js.map",
+    "static/css/2.c677075e.chunk.css": "/styled-organization-page/static/css/2.c677075e.chunk.css",
+    "static/js/2.0fb1d1b2.chunk.js": "/styled-organization-page/static/js/2.0fb1d1b2.chunk.js",
+    "static/js/2.0fb1d1b2.chunk.js.map": "/styled-organization-page/static/js/2.0fb1d1b2.chunk.js.map",
+    "index.html": "/styled-organization-page/index.html",
+    "precache-manifest.61621b213e6cc61bb8030df9eec85f7d.js": "/styled-organization-page/precache-manifest.61621b213e6cc61bb8030df9eec85f7d.js",
+    "service-worker.js": "/styled-organization-page/service-worker.js",
+    "static/css/2.c677075e.chunk.css.map": "/styled-organization-page/static/css/2.c677075e.chunk.css.map",
+    "static/css/main.900120c6.chunk.css.map": "/styled-organization-page/static/css/main.900120c6.chunk.css.map",
+    "static/js/2.0fb1d1b2.chunk.js.LICENSE.txt": "/styled-organization-page/static/js/2.0fb1d1b2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4b541757.js",
+    "static/css/2.c677075e.chunk.css",
+    "static/js/2.0fb1d1b2.chunk.js",
+    "static/css/main.900120c6.chunk.css",
+    "static/js/main.4ebe8040.chunk.js"
+  ]
+}
