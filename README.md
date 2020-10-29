@@ -13,5 +13,5 @@ $ git clone https://github.com/mateusmcordeiro/styled-organization-page.git
 $ yarn start
 ```
 
-it make gonna open a browser app or a tab on oppenned browser with SOP running on it.
+it gonna open a browser app or a tab on oppenned browser with SOP running on it.
 
